@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "650270118227",
+    "project_id": "carhire-be14d",
+    "storage_bucket": "carhire-be14d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650270118227:android:a0657954e7213fc87dd1a6",
+        "android_client_info": {
+          "package_name": "com.example.carhire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650270118227-rc6r7kscpn2ucbuqeit4r5q4jv5urv0l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carhire",
+            "certificate_hash": "899e8f88bfa819b566e764896317766fde5c39b7"
+          }
+        },
+        {
+          "client_id": "650270118227-nst5e8tke8dks1utbofs6u8aoa2tkst8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcWpzMBhRLJmJJ7pZxFuu3rrVBP-ncDKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650270118227-nst5e8tke8dks1utbofs6u8aoa2tkst8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
