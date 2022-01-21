@@ -11,7 +11,7 @@
         android:id="@+id/car_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:lottie_rawRes="@raw/caranimation"
+        app:lottie_rawRes="@raw/lf30"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

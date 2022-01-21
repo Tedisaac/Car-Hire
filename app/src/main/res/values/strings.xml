@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CarHire</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="show_password">Show Password</string>
+    <string name="sign_in">sign in</string>
+    <string name="uname">Username</string>
+    <string name="sign_up">signup</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="send">send</string>
 </resources>

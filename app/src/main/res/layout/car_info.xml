@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    app:cardElevation="8dp"
+    android:background="@color/slightdarkblue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/vehicle_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/car" />
+        <TextView
+            android:id="@+id/vehicle_type"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vehicle_image"
+            android:layout_margin="5dp"
+            android:text="Subaru Forester"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/ksh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vehicle_type"
+            android:layout_margin="5dp"
+            android:text="Ksh."
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/vehicle_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vehicle_type"
+            android:layout_toRightOf="@id/ksh"
+            android:text="2,000"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vehicle_type"
+            android:layout_toRightOf="@id/vehicle_price"
+            android:text="/day"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@color/black"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/more_vehicle_info"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/vehicle_image"
+            android:layout_toRightOf="@+id/vehicle_type"
+            app:lottie_rawRes="@raw/arrow" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
