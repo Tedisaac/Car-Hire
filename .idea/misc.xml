@@ -16,7 +16,9 @@
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/bottom_sheet_fragment.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/car_info.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.25" />
         <entry key="app/src/main/res/layout/password_reset_dialog.xml" value="0.171875" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.171875" />
       </map>
     </option>
   </component>
