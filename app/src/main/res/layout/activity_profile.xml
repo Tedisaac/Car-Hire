@@ -6,76 +6,211 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_background"
     tools:context=".ProfileActivity">
+
 
    <RelativeLayout
        android:id="@+id/profile_page_image_layout"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="30dp">
+       <de.hdodenhof.circleimageview.CircleImageView
+           android:id="@+id/profile_page_back"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_marginStart="15dp"
+           android:layout_marginTop="15dp"
+           android:layout_marginEnd="15dp"
+           android:layout_marginBottom="15dp"
+           android:src="@drawable/back" />
        <de.hdodenhof.circleimageview.CircleImageView
            android:id="@+id/profile_page_image"
-           android:layout_width="200dp"
-           android:layout_height="200dp"
-           android:layout_margin="20dp"
+           android:layout_width="180dp"
+           android:layout_height="180dp"
+           android:layout_marginTop="30dp"
+           android:elevation="10dp"
            android:layout_centerHorizontal="true"
-           android:src="@drawable/user"/>
+           android:src="@drawable/download"/>
    </RelativeLayout>
 
-  <RelativeLayout
-      android:id="@+id/profile_page_info"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/profile_page_image_layout">
-
-      <TextView
-          android:id="@+id/profile_page_name"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Name"
-          android:textSize="20sp"/>
-      <TextView
-          android:id="@+id/profile_page_email"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/profile_page_name"
-          android:text="Email"
-          android:textSize="20sp"/>
-      <TextView
-          android:id="@+id/profile_page_gender"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/profile_page_email"
-          android:text="Dender"
-          android:textSize="20sp"/>
-
-  </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/profile_save"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profile_page_info"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/button_bg">
+        android:layout_below="@+id/profile_page_image_layout"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="5dp"
+        android:backgroundTint="@color/slightdarkblue"
+        android:elevation="10dp">
 
-        <ImageView
-            android:id="@+id/profile_save_image"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+        <RelativeLayout
+            android:id="@+id/profile_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+            <TextView
+                android:id="@+id/profile_email_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_below="@id/profile_email_text_view"
+                android:text="ndeited@gmail.com"/>
+        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/profile_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_email_layout"
+                android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/profile_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_below="@id/profile_name_text_view"
+                    android:text="Isaac Ted"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/edit"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/profile_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_name_layout"
+                android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/profile_number_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_below="@id/profile_number_text_view"
+                    android:text="+254104151629"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/edit"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/profile_gender_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_number_layout"
+                android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/profile_gender_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_below="@id/profile_gender_text_view"
+                    android:text="Male"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/edit"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/profile_age_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_gender_layout"
+                android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/profile_age_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_below="@id/profile_age_text_view"
+                    android:text="22"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/edit"/>
+            </RelativeLayout>
+            <RelativeLayout
+            android:id="@+id/save_layout_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/save" />
+            android:layout_below="@+id/profile_age_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="62dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_border_rounded_cornwe"
+            android:backgroundTint="@color/black">
 
-        <TextView
-            android:id="@+id/save_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/profile_save_image"
-            android:text="SAVE"
-            android:textSize="20sp" />
-    </RelativeLayout>
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_toRightOf="@+id/save_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/save_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/save"
+                app:tint="@color/white" />
+        </RelativeLayout>
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 </RelativeLayout>

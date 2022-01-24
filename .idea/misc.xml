@@ -9,8 +9,10 @@
         <entry key="app/src/main/res/drawable/button_bg.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/drawable/edittext_bg.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/drawable/ic_scattered_forcefields.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_car_details.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.171875" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/activity_my_hires.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.171875" />

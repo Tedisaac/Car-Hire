@@ -8,4 +8,5 @@
     <string name="sign_up">signup</string>
     <string name="confirmPassword">Confirm Password</string>
     <string name="send">send</string>
+    <string name="save">save</string>
 </resources>

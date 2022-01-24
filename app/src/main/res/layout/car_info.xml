@@ -4,13 +4,14 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
-    android:layout_margin="10dp"
+    android:layout_margin="20dp"
     app:cardElevation="8dp"
-    android:background="@color/slightdarkblue">
+    android:backgroundTint="@color/slightdarkblue">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
 
         <ImageView
             android:id="@+id/vehicle_image"
@@ -20,10 +21,13 @@
             android:src="@drawable/car" />
         <TextView
             android:id="@+id/vehicle_type"
-            android:layout_width="290dp"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/vehicle_image"
-            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="9dp"
             android:text="Subaru Forester"
             android:textColor="@color/black"
             android:textSize="18sp"/>
@@ -32,7 +36,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/vehicle_type"
-            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="9dp"
             android:text="Ksh."
             android:textSize="18sp"
             android:textColor="@color/black"/>
@@ -44,7 +51,9 @@
             android:layout_toRightOf="@id/ksh"
             android:text="2,000"
             android:textSize="18sp"
-            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
             android:textColor="@color/black"/>
         <TextView
             android:id="@+id/day"
@@ -55,7 +64,6 @@
             android:text="/day"
             android:textSize="18sp"
             android:layout_marginTop="5dp"
-
             android:textColor="@color/black"/>
 
         <com.airbnb.lottie.LottieAnimationView
