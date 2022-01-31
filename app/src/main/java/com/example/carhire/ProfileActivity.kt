@@ -1,8 +1,10 @@
 package com.example.carhire
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -10,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import com.example.carhire.Utils.SnackBarUtil
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.jar.Manifest
 
@@ -25,7 +28,9 @@ class ProfileActivity : AppCompatActivity() {
     lateinit var userGenderText : TextView
     lateinit var userAgeText : TextView
     //firebase
-    lateinit var auth : FirebaseAuth
+    private lateinit var auth : FirebaseAuth
+    private lateinit var database: FirebaseDatabase
+    private lateinit var reference: DatabaseReference
     //activity result launchers
     private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()){ isGranted ->
         if (isGranted){
@@ -41,6 +46,8 @@ class ProfileActivity : AppCompatActivity() {
 
 
         auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        reference = database.getReference("users")
 
 
         userEmailText = findViewById(R.id.user_email_text)
@@ -68,14 +75,35 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun setUserProfileData() {
         val user = auth.currentUser
+        val userId = auth.uid
         user?.let {
             val userName = user.displayName
             userNameText.text = userName
             val userEmail = user.email
             userEmailText.text = userEmail
-
-
         }
+        if (userId != null) {
+            reference.child(userId).addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        val phoneNumber = snapshot.child("phone").value
+                        val gender = snapshot.child("gender").value
+                        val age = snapshot.child("age").value
+                        userNumberText.text = phoneNumber as CharSequence?
+                        userGenderText.text = gender as CharSequence?
+                        userAgeText.text = age as CharSequence?
+                    } else{
+                        Log.e(TAG, "onDataChange: Data does not exist", )
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e(TAG, "onCancelled: ${error.message}", )
+                }
+
+            })
+        }
+
     }
 
     override fun onBackPressed() {

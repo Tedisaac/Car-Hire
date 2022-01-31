@@ -58,4 +58,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     //slideShow
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+    //calenderView
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    implementation 'com.github.kizitonwose:CalendarView:1.0.4'
 }

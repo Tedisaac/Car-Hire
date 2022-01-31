@@ -14,6 +14,7 @@ import com.example.carhire.Utils.SnackBarUtil
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.*
 import kotlin.concurrent.schedule
@@ -30,11 +31,15 @@ class SignInActivity : AppCompatActivity() {
     lateinit var signInRelativeLayout: RelativeLayout
     //firebase
     private var auth : FirebaseAuth = FirebaseAuth.getInstance()
-    private val user = auth.currentUser
+    private lateinit var  database: FirebaseDatabase
+    private lateinit var reference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
+
+        database = FirebaseDatabase.getInstance()
+        reference = database.getReference("users")
 
         signInRelativeLayout = findViewById(R.id.sign_in_relative_layout)
         signInLayout = findViewById(R.id.sign_in_button)
@@ -120,7 +125,8 @@ class SignInActivity : AppCompatActivity() {
                 if (task.isSuccessful){
                     SnackBarUtil().showSnackBar(this,"Sign in successful",signInRelativeLayout)
                     Timer().schedule(3000){
-                        toInformationPage()
+                        pageChooser()
+                        //toInformationPage()
                         //toMainPage()
                     }
 
@@ -128,6 +134,28 @@ class SignInActivity : AppCompatActivity() {
                     Log.e(TAG, "signIn: " + task.exception )
                 }
             }
+    }
+
+    private fun pageChooser() {
+        val uid = auth.uid
+        (if (uid != null) {
+            reference.child(uid).child("phone").addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        toMainPage()
+                    } else {
+                        toInformationPage()
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+
+
+        })
     }
 
     private fun toInformationPage() {

@@ -33,7 +33,7 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var signUpLayout: RelativeLayout
     //Firebase
     private var auth : FirebaseAuth = FirebaseAuth.getInstance()
-    private val user = auth.currentUser
+
     private lateinit var database : FirebaseDatabase
     private lateinit var reference : DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,7 +110,7 @@ class SignUpActivity : AppCompatActivity() {
                     SnackBarUtil().showSnackBar(this,"Account Registered Successfully",signUpLayout)
                     sendDataToDB()
                     saveUserProfile()
-                    sendVerificationEmail()
+                    //sendVerificationEmail()
                     Timer().schedule(3000){
                         backToSignIn()
                     }
@@ -123,20 +123,19 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
-    private fun sendVerificationEmail() {
+    /*private fun sendVerificationEmail() {
         user!!.sendEmailVerification()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful){
                     Log.e(TAG, "verification Email Sent")
                 }
             }
-    }
+    }*/
 
     private fun saveUserProfile() {
+        val user = auth.currentUser
         val userProfile = userProfileChangeRequest {
             displayName = usernameSignUp.text.toString()
-
-
         }
         user!!.updateProfile(userProfile)
             .addOnCompleteListener{task ->
@@ -155,7 +154,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun sendDataToDB() {
         var model = UserModel(usernameSignUp.text.toString(),emailSignUp.text.toString())
-        var uid = reference.push().key
+        var uid = auth.uid
         reference.child(uid!!).setValue(model)
     }
 

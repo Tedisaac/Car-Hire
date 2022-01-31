@@ -21,7 +21,7 @@ class CarDetailsActivity : AppCompatActivity() {
         }
         carImageSlider = findViewById(R.id.car_image_slider)
         val carImageList = ArrayList<SlideModel>()
-        carImageList.add(SlideModel(R.drawable.hyundai))
+        carImageList.add(SlideModel(R.drawable.hyundai,"Ksh.2500"))
         carImageList.add(SlideModel(R.drawable.hyundaileft))
         carImageList.add(SlideModel(R.drawable.hyundairight))
         carImageSlider.setImageList(carImageList,ScaleTypes.CENTER_CROP)
