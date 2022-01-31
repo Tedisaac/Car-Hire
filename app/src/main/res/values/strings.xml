@@ -9,4 +9,11 @@
     <string name="confirmPassword">Confirm Password</string>
     <string name="send">send</string>
     <string name="save">save</string>
+    <string name="number">0797877878</string>
+    <string name="gender">Select Gender</string>
+    <string name="next">Continue</string>
+    <string-array name="gen">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

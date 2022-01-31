@@ -14,7 +14,7 @@
        android:id="@+id/profile_page_image_layout"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_marginBottom="30dp">
+       android:layout_marginBottom="20dp">
        <de.hdodenhof.circleimageview.CircleImageView
            android:id="@+id/profile_page_back"
            android:layout_width="30dp"
@@ -28,7 +28,8 @@
            android:id="@+id/profile_page_image"
            android:layout_width="180dp"
            android:layout_height="180dp"
-           android:layout_marginTop="30dp"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/profile_page_back"
            android:elevation="10dp"
            android:layout_centerHorizontal="true"
            android:src="@drawable/download"/>
@@ -41,7 +42,6 @@
         android:padding="10dp"
         android:layout_margin="15dp"
         app:cardCornerRadius="5dp"
-        android:backgroundTint="@color/slightdarkblue"
         android:elevation="10dp">
 
         <RelativeLayout
@@ -59,12 +59,14 @@
                 android:layout_height="wrap_content"
                 android:text="Email"
                 android:textColor="@color/black"/>
+
             <TextView
+                android:id="@+id/user_email_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:layout_below="@id/profile_email_text_view"
-                android:text="ndeited@gmail.com"/>
+                android:layout_marginTop="2dp"
+                android:text="ndeited@gmail.com" />
         </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/profile_name_layout"
@@ -78,12 +80,14 @@
                     android:layout_height="wrap_content"
                     android:text="Name"
                     android:textColor="@color/black"/>
+
                 <TextView
+                    android:id="@+id/user_name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
                     android:layout_below="@id/profile_name_text_view"
-                    android:text="Isaac Ted"/>
+                    android:layout_marginTop="2dp"
+                    android:text="Isaac Ted" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,12 +107,14 @@
                     android:layout_height="wrap_content"
                     android:text="Phone Number"
                     android:textColor="@color/black"/>
+
                 <TextView
+                    android:id="@+id/user_number_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
                     android:layout_below="@id/profile_number_text_view"
-                    android:text="+254104151629"/>
+                    android:layout_marginTop="2dp"
+                    android:text="+254104151629" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -128,12 +134,14 @@
                     android:layout_height="wrap_content"
                     android:text="Gender"
                     android:textColor="@color/black"/>
+
                 <TextView
+                    android:id="@+id/user_gender_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
                     android:layout_below="@id/profile_gender_text_view"
-                    android:text="Male"/>
+                    android:layout_marginTop="2dp"
+                    android:text="Male" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -153,12 +161,14 @@
                     android:layout_height="wrap_content"
                     android:text="Age"
                     android:textColor="@color/black"/>
+
                 <TextView
+                    android:id="@+id/user_age_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
                     android:layout_below="@id/profile_age_text_view"
-                    android:text="22"/>
+                    android:layout_marginTop="2dp"
+                    android:text="22" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -173,9 +183,9 @@
             android:layout_below="@+id/profile_age_layout"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="62dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="62dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/blue_border_rounded_cornwe"
             android:backgroundTint="@color/black">
 

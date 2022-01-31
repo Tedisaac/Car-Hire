@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottm_sheet"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
@@ -90,6 +91,7 @@
         android:layout_marginLeft="62dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="62dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/blue_border_rounded_cornwe"
         android:backgroundTint="@color/black">
 
@@ -116,7 +118,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="30dp"
             android:src="@drawable/send"
-            app:tint="@color/white" />
+            android:tint="@color/white"
+            tools:ignore="UseAppTint" />
     </RelativeLayout>
 
 

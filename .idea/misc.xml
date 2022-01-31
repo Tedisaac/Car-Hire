@@ -9,15 +9,20 @@
         <entry key="app/src/main/res/drawable/button_bg.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/drawable/edittext_bg.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/drawable/ic_scattered_forcefields.xml" value="0.18802083333333333" />
-        <entry key="app/src/main/res/layout/activity_car_details.xml" value="0.171875" />
+        <entry key="app/src/main/res/drawable/image_bg.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/layout/activity_car_details.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_my_hires.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/activity_personal_info.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/bottom_sheet_fragment.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/car_info.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/my_hires_info.xml" value="0.21" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.25" />
         <entry key="app/src/main/res/layout/password_reset_dialog.xml" value="0.171875" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.171875" />

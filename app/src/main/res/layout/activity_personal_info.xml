@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".PersonalInfoActivity">
+
+    <TextView
+        android:id="@+id/more_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Please fill in the details"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/phone_number_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/more_info"
+        android:text="Phone Number"
+        android:textColor="@color/black"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"/>
+    <RelativeLayout
+        android:id="@+id/phone_number_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone_number_textview"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/blue_border_rounded_cornwe">
+
+        <EditText
+            android:id="@+id/phone_number_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@+id/phone_icon"
+            android:background="@android:color/transparent"
+            android:elevation="5dp"
+            android:hint="@string/number"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingLeft="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textColorHint="@color/grey_font"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/phone_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_phone_24"
+            app:tint="@color/black" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/birth_date_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone_number_layout"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:text="Birth Date"
+        android:textColor="@color/black"/>
+
+    <CalendarView
+        android:id="@+id/calender"
+        android:layout_width="300dp"
+        android:layout_height="338dp"
+        android:layout_below="@+id/birth_date_textview"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/gender_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calender"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="Gender"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gender_text_input_layout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender_textview"
+        android:layout_marginTop="10dp"
+        android:hint="@string/gender"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/Theme.MaterialComponents.Light.Bridge"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/gender_auto_complete_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <RelativeLayout
+        android:id="@+id/continue_layout_button"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender_text_input_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/blue_border_rounded_cornwe"
+        android:backgroundTint="@color/black">
+
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@+id/continue_icon"
+            android:background="@android:color/transparent"
+            android:elevation="5dp"
+            android:maxLines="1"
+            android:paddingLeft="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/continue_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/next"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

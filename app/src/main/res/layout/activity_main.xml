@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -18,14 +17,17 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_baseline_menu_24"
-        android:layout_margin="10dp"
-        app:tint="@color/black" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/car_info_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/menu_drawer"
-        tools:listitem="@layout/car_info"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        app:tint="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/car_info_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/menu_drawer"
+            tools:listitem="@layout/car_info" />
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    app:cardElevation="5dp"
+    android:backgroundTint="@color/silver">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <TextView
+            android:id="@+id/my_hires_car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Toyota Premio"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+        <RelativeLayout
+            android:id="@+id/my_hires_date_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_hires_car_model">
+        <TextView
+            android:id="@+id/my_hires_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Date : "
+            android:textColor="@color/black"/>
+       <TextView
+           android:id="@+id/my_hires_date_textview"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:layout_toRightOf="@+id/my_hires_date_text"
+           android:text="12/03/2021"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_hires_car_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_hires_date_info">
+            <TextView
+                android:id="@+id/my_hires_price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Price : "
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/my_hires_price_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/my_hires_price_text"
+                android:text="2,000"/>
+            <TextView
+                android:id="@+id/my_hires_per_day_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/my_hires_price_textview"
+                android:text="per day" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_hires_no_plate_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_hires_car_price">
+            <TextView
+                android:id="@+id/my_hires_no_plate_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="No. Plate : "
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/my_hires_no_plate_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/my_hires_no_plate_text"
+                android:text="KAA 123R"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_hires_owner_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_hires_no_plate_info">
+            <TextView
+                android:id="@+id/my_hires_owner_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Owner : "
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/my_hires_owner_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/my_hires_owner_text"
+                android:text="Charles Kimani"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_hires_owner_number_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_hires_owner_info">
+            <TextView
+                android:id="@+id/my_hires_number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="contact : "
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/my_hires_number_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/my_hires_number_text"
+                android:text="0123456789"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

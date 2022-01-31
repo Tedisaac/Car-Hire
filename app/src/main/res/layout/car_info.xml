@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
-    android:layout_margin="20dp"
-    app:cardElevation="8dp"
-    android:backgroundTint="@color/slightdarkblue">
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    app:cardElevation="5dp"
+    android:backgroundTint="@color/silver">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,16 +16,17 @@
 
         <ImageView
             android:id="@+id/vehicle_image"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/car" />
+            android:background="@drawable/image_bg"
+            android:src="@drawable/hyundai"
+            android:scaleType="centerCrop"/>
         <TextView
             android:id="@+id/vehicle_type"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/vehicle_image"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="9dp"
@@ -71,7 +73,9 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@id/vehicle_image"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/vehicle_type"
+            android:layout_marginLeft="15dp"
             app:lottie_rawRes="@raw/arrow" />
     </RelativeLayout>
 

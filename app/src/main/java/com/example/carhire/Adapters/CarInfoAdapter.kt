@@ -2,6 +2,8 @@ package com.example.carhire.Adapters
 
 import android.app.Activity
 import android.content.Intent
+import android.icu.number.NumberFormatter.with
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,13 @@ import com.airbnb.lottie.LottieAnimationView
 import com.example.carhire.CarDetailsActivity
 import com.example.carhire.Models.CarInfoModel
 import com.example.carhire.R
+import com.squareup.picasso.Picasso
+import java.lang.System.load
+import java.util.*
+import java.util.logging.Handler
+import kotlin.collections.ArrayList
+import kotlin.concurrent.schedule
+
 
 class CarInfoAdapter(private val carInfo : ArrayList<CarInfoModel>) : RecyclerView.Adapter<CarInfoAdapter.CarViewHolder>() {
 

@@ -14,15 +14,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.carhire.Adapters.CarInfoAdapter
 import com.example.carhire.Models.CarInfoModel
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    lateinit var carRecyclerView : RecyclerView
+    //arraylists
     lateinit var carArrayList: ArrayList<CarInfoModel>
     lateinit var type : Array<String>
     lateinit var price : Array<String>
     lateinit var image : Array<Int>
-
+    //variable initialization
+    lateinit var carRecyclerView : RecyclerView
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView : NavigationView
     lateinit var navView : View
@@ -30,9 +33,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var navViewProfileEmail : TextView
     lateinit var navViewProfileButton : TextView
     lateinit var menuDrawerImage : ImageView
+    //firebase
+    lateinit var auth: FirebaseAuth
+    lateinit var database : FirebaseDatabase
+    lateinit var reference : DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        reference = database.getReference("users")
 
         carRecyclerView = findViewById(R.id.car_info_recyclerview)
         carRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -46,6 +57,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navViewProfileEmail = navView.findViewById(R.id.nav_profile_email)
         navViewProfileButton = navView.findViewById(R.id.nav_profile_button)
         navHeaderProfile()
+        getUserInfo()
 
 
         menuDrawerImage = findViewById(R.id.menu_drawer)
@@ -67,12 +79,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         image = arrayOf(
             R.drawable.car,
-            R.drawable.call,
-            R.drawable.user,
-            R.drawable.car,
+            R.drawable.hyundai,
+            R.drawable.hyundaileft,
+            R.drawable.hyundairight,
         )
         carArrayList = arrayListOf<CarInfoModel>()
         getCarData()
+    }
+
+    private fun getUserInfo() {
+        val user = auth.currentUser
+        user?.let {
+            val userEmail = user.email
+            navViewProfileEmail.text = userEmail
+        }
     }
 
     private fun navHeaderProfile() {
@@ -115,7 +135,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 finish()
             }
             R.id.logout -> {
-                val logoutIntent = Intent(this,SignInActivity::class.java)
+                auth.currentUser?.let {
+                    auth.signOut()
+                }
+                val logoutIntent = Intent(this, SignInActivity::class.java)
                 startActivity(logoutIntent)
                 finish()
             }

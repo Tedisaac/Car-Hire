@@ -14,7 +14,166 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:src="@drawable/back" />
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/back"/>
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/car_image_slider"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/car_details_back"
+        app:iss_auto_cycle="true"
+        app:iss_delay="0"
+        app:iss_placeholder="@color/silver"
+        app:iss_error_image="@color/silver"
+        app:iss_corner_radius="5"
+        android:layout_margin="10dp"
+        app:iss_selected_dot="@drawable/default_selected_dot"
+        app:iss_unselected_dot="@drawable/default_unselected_dot"
+        app:iss_period="2000"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/car_info_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        android:layout_below="@id/car_image_slider"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/car_model_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/model_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Model"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/model_text_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/model_text_tv"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="textEnd"
+                android:text="Toyota Premio"
+                android:textColor="@color/grey_font"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/car_cc_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/car_model_info"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/cc_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="CC"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/cc_text_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/cc_text_tv"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="textEnd"
+                android:text="1500"
+                android:textColor="@color/grey_font"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/no_plate_model_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/car_cc_info"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/no_plate_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="No. Plate"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/no_plate_text_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/no_plate_text_tv"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="textEnd"
+                android:text="KAA 111A"
+                android:textColor="@color/grey_font"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/car_owner_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_plate_model_info"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/car_owner_text_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Owner"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/car_owner_text_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/car_owner_text_tv"
+                android:layout_margin="5dp"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="textEnd"
+                android:text="Charles Kimani"
+                android:textColor="@color/grey_font"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/car_owner_contact"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/car_owner_info"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/blue_border_rounded_cornwe"
+            android:backgroundTint="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/phone_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_phone_24"
+                android:layout_marginLeft="30dp"
+                app:tint="@color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/phone_image"
+                android:background="@android:color/transparent"
+                android:text="Contact owner"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
 
 </RelativeLayout>

@@ -16,5 +16,11 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:src="@drawable/back" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_hires_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_hires_back"
+        tools:listitem="@layout/my_hires_info"/>
 
 </RelativeLayout>
