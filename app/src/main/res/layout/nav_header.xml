@@ -12,7 +12,7 @@
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
         android:elevation="5dp"
-        android:src="@drawable/download"/>
+        android:src="@drawable/icons_user"/>
     <TextView
         android:id="@+id/nav_profile_email"
         android:layout_width="wrap_content"

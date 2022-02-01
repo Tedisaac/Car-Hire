@@ -1,6 +1,7 @@
 package com.example.carhire
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -16,7 +17,10 @@ import com.example.carhire.Models.CarInfoModel
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import de.hdodenhof.circleimageview.CircleImageView
+import java.io.File
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     //arraylists
@@ -37,6 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var auth: FirebaseAuth
     lateinit var database : FirebaseDatabase
     lateinit var reference : DatabaseReference
+    lateinit var storageReference: StorageReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -58,6 +63,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navViewProfileButton = navView.findViewById(R.id.nav_profile_button)
         navHeaderProfile()
         getUserInfo()
+        setUserProfileImage()
 
 
         menuDrawerImage = findViewById(R.id.menu_drawer)
@@ -85,6 +91,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         carArrayList = arrayListOf<CarInfoModel>()
         getCarData()
+    }
+    private fun setUserProfileImage() {
+        storageReference = FirebaseStorage.getInstance().getReference("users/${auth.uid}")
+        val localFile = File.createTempFile("tempImage","jpg")
+        storageReference.getFile(localFile).addOnSuccessListener {
+            val imageBitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+            navViewProfileImage.setImageBitmap(imageBitmap)
+        }
     }
 
     private fun getUserInfo() {
